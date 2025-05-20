@@ -44,6 +44,10 @@ def update_item(request: PDFRequest):
     Generates maintenance report PDF from JSON payload.
     Takes in folder, filename, and list of MaintenanceRecord objects (JSON), creates a formatted pdf using ReportLab, saves the PDF to the specified path and returns its location
     """
+
+    print("[Server]: Received request payload:")
+    print(request.model_dump_json())
+
     try:
         # Extract data from POST requset
         directory = request.folder
@@ -115,6 +119,13 @@ def update_item(request: PDFRequest):
         c.save()
 
         # Return success and saved file path
-        return {"status": "success", "path": file_path}
+        response = {"status": "success", "path": file_path}
+
+        print("[Server]: Sending response payload:")
+        print(response)
+
+        return response
+
     except Exception as e:
+        print("[Server]: Error while generating PDF:", e)
         raise HTTPException(status_code=500, detail=str(e))

@@ -48,7 +48,7 @@ def main():
         records = json.load(file)
 
     # Set output save folder and desired pdf file name
-    folder = "./"
+    folder = os.getcwd()  # Currently set to save to current working directory
     name = "maintenance_report.pdf"
 
     payload = {
