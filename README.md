@@ -75,4 +75,5 @@ JSON data will be provided in the response once the microservice reads and creat
       else:
           print("Error:", response.status_code, response.text)
 ```
-
+## UML Diagram
+![alt text](https://github.com/hayleytruong/CS361_MicroserviceA/blob/7e694b8d14d5161d65c29ab76a8c714afd372561/pdf_microservice_uml.png)
