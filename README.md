@@ -14,6 +14,10 @@ Before using, please make sure you have:
 - Python 3.8 or later installed
 - Install the following Python packages:
   ```pip install fastapi reportlab pydantic```
+- Run FastAPI in the write_pdf_microservice.py terminal by calling:
+  ```fastapi dev [file path for write_pdf_microservice.py]```
+  -or-
+  ```uvicorn write_pdf_microservice:app --reload --host 127.0.0.1 --port 8000```
 
 ### How to programmatically REQUEST data
 1. Send an HTTP POST to the /generate endpoint on the running service (http://localhost:8000/generate).
